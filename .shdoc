@@ -1,0 +1,9 @@
+# -*- shell-script -*-
+
+# Generates man pages for shell-script function definitions
+#
+# @param files Input shell-script files
+function shdoc() {
+    d=`pwd`
+    ruby "$d/shdoc.rb" "$@"
+}

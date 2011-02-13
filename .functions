@@ -1,0 +1,39 @@
+# -*- shell-script -*-
+
+# Description 1
+function test1() {
+    echo "test1"
+}
+
+# Description 1
+# rest of description
+function test11() {
+    echo "test11"
+}
+
+# Decription 2
+# @param one First arg
+function test2() {
+    echo "test2 $1"
+}
+# Decription 2
+# @param one First arg
+#        reset of first param
+function test22() {
+    echo "test2 $1"
+}
+
+# Decription 3
+# @param one First arg
+# @return someting
+function test3() {
+    echo "something $1"
+}
+
+# Decription 3
+# @param one First arg
+# @param two Second arg
+# @return someting
+function test4() {
+    echo "something $1 $2"
+}

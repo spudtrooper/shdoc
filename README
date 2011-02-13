@@ -1,0 +1,68 @@
+DESCRIPTION
+
+This utility helps you document shell-script functions by generating man files from inline documentation of sh functions.
+
+
+USAGE
+
+To use, you must run this on a file that contains shell functions.
+Namely, you'll probably run it on a file included in the list of files
+you source at login.  For example, if you have a file called
+.functions that contains the following:
+
+# Description of the function
+# @param one an argument to the function
+function some_function() {
+    echo "something $1"
+}
+
+This would generate a man page for the function 'some_function' that
+looks like this:
+
+SOME_FUNCTION()                                            SOME_FUNCTION()
+
+NAME
+       some_function
+
+SYNOPSIS
+       some_function one
+
+DESCRIPTION
+       Description of the function
+
+OPTIONS
+       one    an argument to the function
+
+AUTHOR
+       jeff
+
+                                                           SOME_FUNCTION()
+
+The man pages are create in $HOME/man, so you'll need to add the
+following to one of your login files -- e.g. .bashrc:
+
+export MANPATH=$MANPATH:$HOME/man
+
+
+BOOSTRAPPING
+
+There is a file .shdoc that defines the function 'shdoc' and generates a man page, such as:
+
+SHDOC()                                                                SHDOC()
+
+NAME
+       shdoc
+
+SYNOPSIS
+       shdoc files
+
+DESCRIPTION
+       Generates man pages for shell-script function definitions
+
+OPTIONS
+       files  Input shell-script files
+
+AUTHOR
+       jeff
+
+                                                                       SHDOC()
